@@ -1,6 +1,5 @@
 <?php
-include "koneksi.php";
-
+include 'koneksiModel.php';
 $nama_produk = $_POST['nama_produk'];
 $harga_produk = $_POST['harga_produk'];
 $jenis_produk = $_POST['jenis_produk'];
