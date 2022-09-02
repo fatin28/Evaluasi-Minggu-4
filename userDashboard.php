@@ -1,11 +1,16 @@
 <html>
 
-<body> <?php session_start();
-        if ($_SESSION['status'] == 'login') {
-            echo '<h1> Hai ' . $_SESSION['username'] . ' </h1><br>';
-            echo '<a href="logoutSession.php">Logout</a>';
-        }
-        ?>
+<body>
+    <?php
+    session_start();
+    if ($_SESSION['role'] == 'user') {
+        header("Location:view_user.php");
+        die();
+    } else {
+        header("Location:login.html");
+        die();
+    }
+    ?>
 </body>
 
 </html>

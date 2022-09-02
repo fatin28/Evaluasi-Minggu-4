@@ -21,12 +21,12 @@
     if ($rowcount > 0) {
         session_start();
         $_SESSION['username'] = $username;
-        $_SESSION['status'] = 'login';
+        $_SESSION['role'] = $fechResult['role'];
     }
-    if ($fechResult['role'] == 'admin') {
+    if ($_SESSION['role'] == 'admin') {
         echo "Anda berhasil login ";
         echo "<a href='adminDashboard.php'>Admin</a>";
-    } elseif ($fechResult['role'] == 'user') {
+    } elseif ($_SESSION['role'] == 'user') {
         echo "Anda berhasil login ";
         echo "<a href='userDashboard.php'>User Dasboard</a>";
     } else {
